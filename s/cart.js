@@ -71,7 +71,7 @@ export default function Cart({navigation}){
 
  </View> 
 
- <View style={[flexx.fee  ,{}]}>
+ <View style={[flexx.fee  ,flexx.borderDesign]}>
  <Text  style={flexx.fontsize}>Total</Text>
 <Text style={flexx.fontsize}> <FontAwesome name="dollar" size={10} color="orangered" />3,500.00</Text>
  </View>
@@ -107,11 +107,11 @@ color:"#6a6c6d", fontSize:16
     },
     fee:{
         flexDirection:"row" , justifyContent:"space-between" , alignItems:"center",
-         padding:6
+         padding:6 , margin:10
     },
     feeContainer:{
         backgroundColor:"#eee" , width:"95%" , margin:10 , borderRadius:10 ,
-        marginTop:30 , padding:10
+        marginTop:30 , padding:20
     }
     ,
     checkout:{
@@ -119,5 +119,7 @@ color:"#6a6c6d", fontSize:16
     },
     checkoutText:{
         fontSize:20 , fontWeight:"400",color:"#fff", textAlign:"center"
-    }
+    },
+    borderDesign:{
+        borderWidth:3 , borderLeftWidth:0 , borderRightWidth:0 , borderBottomWidth:0 , borderStyle:"dashed"    }
 })

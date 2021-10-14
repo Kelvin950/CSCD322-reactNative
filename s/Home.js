@@ -62,7 +62,7 @@ export default function Home({navigation}){
     
  </View>
  <Text style={{fontSize:22 , fontWeight:"bold" ,margin:15}}> 
-     The Worlds Best Bike
+     The World's <Text style={{fontSize:20 , fontFamily:"500" , color:"orangered"}}>Best Bike</Text>
  </Text>
 
  <Text style={{fontSize : 19  , fontWeight:"bold", margin:10}}>

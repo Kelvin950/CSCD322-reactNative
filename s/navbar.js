@@ -11,11 +11,13 @@ export default function Navbar({navigate})
     return(
         <View style={[flexx.views , flexx.container]}>
         <TouchableOpacity>
-        <Feather name="home" size={24} color="orange" />
+        <Feather name="home" size={24} color="orange" onPress={()=>{
+            navigate("Home")
+        }} />
         </TouchableOpacity>
     <View style={flexx.border}>
-<TouchableOpacity>
-<FontAwesome name="microphone" size={24} style={flexx.microphone} color="white" />
+<TouchableOpacity style={flexx.microphone}>
+<FontAwesome name="microphone" size={24} color="white" />
 </TouchableOpacity>
 </View>
 <TouchableOpacity>
