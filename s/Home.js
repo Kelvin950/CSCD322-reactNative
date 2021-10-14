@@ -1,9 +1,45 @@
 import React from "react"
-import {Text ,View , StyleSheet} from "react-native"
-import {Ionicons , FontAwesome , AntDesign ,Feather}  from "@expo/vector-icons"
+import {Text ,View , StyleSheet , Image ,FlatList} from "react-native"
+import {Ionicons , FontAwesome , AntDesign ,Feather }  from "@expo/vector-icons"
 import iconSet from "@expo/vector-icons/build/Fontisto"
+import Bike from "./Bike"
+import bike1 from  "../assets/Bicycle-PNG-8.png"
+import bike2 from  "../assets/pngaaa.com-548541.png"
+import bike3 from "../assets/Bicycle-PNG-Background-Image.png"
+import bike4 from "../assets/pngegg.png"
+import Navbar from "./navbar"
+const  bikes =  [
 
-export default function Home(){
+    {
+        imageurl:bike1,
+        name:"Pinarello Bike",
+        price:"1,700.00",
+        id:0
+    },
+    {
+        imageurl:bike2,
+        name:"Brompton Bike",
+        price:"1,500.00",
+        id:1
+    },
+    {
+        imageurl:bike3,
+        name:"Schwinn Bike",
+        price:"1,200.00",
+        id:2
+
+    },
+    {
+        imageurl:bike4,
+        name:"Norco Bike",
+        price:"9,80.00",
+        id:3
+
+    }
+]
+
+
+export default function Home({navigation}){
 
     return (
     <View style={{
@@ -43,16 +79,24 @@ export default function Home(){
 <Text style={{margin:14, backgroundColor:"#eee" ,padding:10 , borderRadius:5 , width:93}}>
     Mountain
 </Text>
-<Text style={{margin:14, backgroundColor:"#eee" ,padding:10 , borderRadius:5 ,textAlign:"center"}}>
+<Text style={{margin:14, backgroundColor:"#eee" ,padding:10 , borderRadius:5 ,textAlign:"center"}} onPress={
+    ()=>{
+        navigation.navigate("Cart")
+    }
+}>
     Urb
 </Text>
 </View>
 
-<View style={[flexx.views , flexx.container]}>
-<Feather name="home" size={24} color="orange" />
-<FontAwesome name="microphone" size={24} style={flexx.microphone} color="white" />
-<Feather name="shopping-bag" size={24} color="black" />
+<View style={flexx.bikeContainer}>
+
+ {
+     bikes.map(item=><Bike item={item} />)
+ }
+
+   
 </View>
+<Navbar navigate ={navigation.navigate}/>
     </View>
     
 
@@ -62,9 +106,21 @@ export default function Home(){
 
 const flexx = StyleSheet.create(
     {
-        container:{flexDirection:"row" ,justifyContent:"space-between" ,alignItems:"center"},
-        views:{ position:"absolute" ,bottom:0 , left:0 , right:0, backgroundColor:"#eee" , padding:20}, 
-        microphone:{
-            position:"relative" , bottom:50 , backgroundColor:"black", padding:30, borderRadius:50       }
+      
+        bikeContainer:{
+          width:"100%"
+          ,
+          height:"70%",
+          padding:5,
+          flexDirection:"row",
+          flexWrap:"wrap"
+        },
+      
+    bikeView:{
+   alignItems:"center" , justifyContent:"center" , height:100 ,flex:1 ,margin:1
+    } ,
+   
+    
     }
+    
 )

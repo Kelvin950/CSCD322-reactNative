@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import login from "./s/login"
 import Home from "./s/Home"
+import Cart from "./s/cart"
 import {NavigationContainer} from "@react-navigation/native"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function App() {
@@ -18,9 +19,10 @@ export default function App() {
   
       <MainNavigator.Screen name="Home" component =  {Home}/>
       <MainNavigator.Screen name="login" component={login}/>
+      <MainNavigator.Screen name="Cart" component={Cart}/>
       </MainNavigator.Navigator>
     </NavigationContainer>
-      <Text>Open up App.js to start working on your app!</Text>
+
       <StatusBar style="auto" />
     </View>
   );
