@@ -11,7 +11,7 @@ export default function Navbar({navigate})
     return(
         <View style={[flexx.views , flexx.container]}>
         <TouchableOpacity>
-        <Feather name="home" size={24} color="orange" onPress={()=>{
+        <Feather name="home" size={24} color="black" onPress={()=>{
             navigate("Home")
         }} />
         </TouchableOpacity>
@@ -21,7 +21,7 @@ export default function Navbar({navigate})
 </TouchableOpacity>
 </View>
 <TouchableOpacity>
-<Feather name="shopping-bag" size={24} color="black" onPress={()=>{
+<Feather name="shopping-bag" size={24} color="orangered" onPress={()=>{
  navigate("Cart")
 }} />
 </TouchableOpacity>
